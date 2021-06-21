@@ -1,0 +1,131 @@
+@import './mixin.scss';
+@import './element-variables.scss';
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+  line-height: 1;
+}
+
+a {
+  text-decoration: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+a:active,
+a:hover {
+  text-decoration: none;
+  outline: 0;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+%display-flex {
+  display: flex;
+}
+
+%flex-1 {
+  flex: 1;
+}
+
+.flex {
+  @extend %display-flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex1 {
+  @extend %flex-1;
+}
+
+.flex-center {
+  @extend %display-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.align-start {
+  @include align-items(flex-start);
+}
+
+.align-end {
+  @include align-items(flex-end);
+}
+
+.align-center {
+  @include align-items(center);
+}
+
+.align-stretch {
+  @include align-items(stretch);
+}
+
+.align-baseline {
+  @include align-items(baseline);
+}
+
+.self-start {
+  @include align-items(flex-start);
+}
+
+.self-center {
+  @include align-items(flex-center);
+}
+
+.self-end {
+  @include align-items(flex-end);
+}
+
+.self-stretch {
+  @include align-items(stretch);
+}
+
+.align-stretch {
+  @include align-items(stretch);
+}
+
+.justify-start {
+  @include justify-content(flex-start);
+}
+
+.justify-end {
+  @include justify-content(flex-end);
+}
+
+.justify-center {
+  @include justify-content(center);
+}
+
+.justify-between {
+  @include justify-content(space-between);
+}
+
+.justify-around {
+  @include justify-content(space-around);
+}
