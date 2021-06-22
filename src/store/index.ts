@@ -1,3 +1,4 @@
+import { importAllStore } from '@/utils/store';
 import Vue from 'vue';
 import Vuex from 'vuex';
 
@@ -7,5 +8,5 @@ export default new Vuex.Store({
   state: {},
   mutations: {},
   actions: {},
-  modules: {},
+  modules: importAllStore(),
 });
