@@ -38,14 +38,16 @@ export function importAllStore<S>(): ModuleTree<S> {
       /\.ts$/,
     );
     requireContext.keys().forEach((fileName) => {
-      // 获取内容
-      const modulesConent = requireContext(fileName);
-      if (modulesConent.default) {
-        const { name, ...module } = modulesConent.default;
-        // 获取 PascalCase 命名
-        const modulesName = name || fileName.replace(/^\.\/(.*)\.\w+$/, '$1');
+      if (fileName !== 'index.ts') {
+        // 获取内容
+        const modulesConent = requireContext(fileName);
+        if (modulesConent.default) {
+          const { name, ...module } = modulesConent.default;
+          // 获取 PascalCase 命名
+          const modulesName = name || fileName.replace(/^\.\/(.*)\.\w+$/, '$1');
 
-        modules[modulesName] = { ...module };
+          modules[modulesName] = { ...module };
+        }
       }
     });
   } catch (error) {

@@ -31,6 +31,7 @@ module.exports = {
       },
     },
   },
+  transpileDependencies: ['vuex-composition-helpers'],
   chainWebpack: (config) => {
     // 设置路径别名
     config.resolve.alias.set('@', resolve('src'));

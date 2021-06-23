@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import 'core-js/es/weak-map';
 import VueCompositionApi from '@vue/composition-api';
 import 'normalize.css';
 import App from './App.vue';
