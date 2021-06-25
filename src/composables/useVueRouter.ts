@@ -1,8 +1,12 @@
 import {
   ComponentInternalInstance,
+  computed,
   getCurrentInstance,
+  reactive,
+  Ref,
 } from '@vue/composition-api';
 import VueRouter, { Route } from 'vue-router';
+import Vue from 'vue';
 
 export function getVueInstance(): ComponentInternalInstance {
   const instance = getCurrentInstance();
@@ -12,9 +16,9 @@ export function getVueInstance(): ComponentInternalInstance {
   throw new Error('Vue instance is missing');
 }
 
-export function useRoute(): Route {
+export function useRoute(): Ref<Route> {
   const { proxy } = getVueInstance();
-  return proxy.$route;
+  return computed<Route>(() => proxy.$route);
 }
 
 export function useRouter(): VueRouter {
