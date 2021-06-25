@@ -3,7 +3,7 @@
     <img alt="Vue logo" src="../assets/logo.png" />
     <el-button @click="loginAction">登录</el-button>
     <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
-    <el-button type="primary">登录</el-button>
+    <el-button type="primary" @click="onLogin">登录</el-button>
   </div>
 </template>
 
@@ -17,12 +17,13 @@
 //   },
 // })
 // export default class Home extends Vue {}
-import { defineComponent, Ref } from '@vue/composition-api';
+import { defineComponent, onMounted, Ref } from '@vue/composition-api';
 import {
   useNamespacedState,
   useNamespacedActions,
 } from 'vuex-composition-helpers';
 import HelloWorld from '@/components/HelloWorld.vue';
+import { useRoute, useRouter } from '@/composables/useVueRouter';
 export default defineComponent({
   components: { HelloWorld },
   setup() {
@@ -36,10 +37,22 @@ export default defineComponent({
 
     const { loginAction } = useNamespacedActions('user', ['loginAction']);
 
+    const route = useRoute();
+    const router = useRouter();
+
+    onMounted(() => {
+      console.log(route);
+    });
+
+    const onLogin = (): void => {
+      router.push({ name: 'About' });
+    };
+
     return {
       loginPending,
       userInfo,
       loginAction,
+      onLogin,
     };
   },
 });
