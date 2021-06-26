@@ -3,7 +3,7 @@ import iconsvg from './IconSvg.vue';
 /**
  * 自动导入 assets/iconsvg 下svg文件
  */
-export function importAllSvg() {
+export function importAllSvg(): void {
   try {
     const requireContext: __WebpackModuleApi.RequireContext = require.context(
       '../../assets/iconsvg',

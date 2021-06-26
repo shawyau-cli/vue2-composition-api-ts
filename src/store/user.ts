@@ -87,7 +87,7 @@ const StoreModel: ModuleType = {
     },
   },
   actions: {
-    loginAction: async ({ commit, state }): Promise<any> => {
+    loginAction: async ({ commit, state }): Promise<unknown> => {
       if (state.loginPending) {
         return;
       }

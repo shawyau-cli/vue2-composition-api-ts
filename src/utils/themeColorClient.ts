@@ -6,7 +6,8 @@ const appConfig = require('@/config/app.config');
 export let curColor = appConfig.themeColor;
 
 // 动态切换主题色
-export function changeThemeColor(newColor: string) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function changeThemeColor(newColor: string): any {
   let customB = (Math.random() * 256).toString(16); // 按你需要生成颜色
   if (customB.length == 1) customB = '0' + customB;
   const options = {
@@ -23,7 +24,7 @@ export function changeThemeColor(newColor: string) {
   });
 }
 
-export function initThemeColor() {
+export function initThemeColor(): void {
   const savedColor = localStorage.getItem('theme_color');
   if (savedColor) {
     document.body.style.display = 'none';

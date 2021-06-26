@@ -2,11 +2,9 @@ import {
   ComponentInternalInstance,
   computed,
   getCurrentInstance,
-  reactive,
   Ref,
 } from '@vue/composition-api';
 import VueRouter, { Route } from 'vue-router';
-import Vue from 'vue';
 
 export function getVueInstance(): ComponentInternalInstance {
   const instance = getCurrentInstance();
