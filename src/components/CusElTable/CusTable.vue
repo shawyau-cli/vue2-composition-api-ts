@@ -167,9 +167,4 @@ export default defineComponent({
     font-size: 14px;
   }
 }
-// .table-container /deep/ {
-//   .el-table {
-//     font-size: 14px;
-//   }
-// }
 </style>

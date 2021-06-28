@@ -10,5 +10,6 @@ export default function (
   date: ConfigType,
   formatPattern = 'YYYY-MM-DD HH:mm:ss',
 ): string {
-  return dayjs(date).format(formatPattern);
+  const dayjsDate = typeof date === 'number' ? dayjs.unix(date) : dayjs(date);
+  return dayjsDate.format(formatPattern);
 }
