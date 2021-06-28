@@ -6,7 +6,7 @@
 </template>
 
 <script lang="tsx">
-import { defineComponent, ref, SetupContext } from '@vue/composition-api';
+import { defineComponent } from '@vue/composition-api';
 import CusTable from '@/components/CusElTable/CusTable.vue';
 
 const helloCell = defineComponent({
@@ -16,7 +16,7 @@ const helloCell = defineComponent({
       type: Object,
     },
   },
-  setup(props: { row: { hello: string } }, { emit }) {
+  setup(props: { row: { hello: string } }) {
     console.log('cell inner', props);
     const hello = props.row.hello;
 
