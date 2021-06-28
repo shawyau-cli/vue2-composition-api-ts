@@ -6,7 +6,7 @@
 </template>
 
 <script lang="tsx">
-import { defineComponent } from '@vue/composition-api';
+import { defineComponent, inject, provide } from '@vue/composition-api';
 import CusTable from '@/components/CusElTable/CusTable.vue';
 
 const helloCell = defineComponent({
@@ -17,11 +17,10 @@ const helloCell = defineComponent({
     },
   },
   setup(props: { row: { hello: string } }) {
-    console.log('cell inner', props);
     const hello = props.row.hello;
-
+    const deleteRow = inject('deleteRow');
     return () => (
-      <el-button type="primary" size="mini">
+      <el-button type="primary" size="mini" onClick={deleteRow}>
         {hello}
       </el-button>
     );
@@ -34,6 +33,10 @@ export default defineComponent({
     CusTable,
   },
   setup() {
+    const deleteRow = () => {
+      alert(22);
+    };
+    provide('deleteRow', deleteRow);
     const column = [
       { label: 'Hello', key: 'hello', comp: helloCell },
       { label: 'World', key: 'world' },

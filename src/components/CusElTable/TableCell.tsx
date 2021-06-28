@@ -21,5 +21,16 @@ export default defineComponent<TableCellProps>({
   setup(props) {
     const { comp: Comp } = props;
     return () => <Comp row={props.scope.row} />;
+    // const data = {
+    //   props: {
+    //     ...attrs,
+    //     row: props.scope.row,
+    //     index: props.scope.$index,
+    //   },
+    //   on: {
+    //     ...listeners,
+    //   },
+    // };
+    // return () => <Comp {...data} />;
   },
 });
