@@ -20,6 +20,7 @@ import {
   inject,
   provide,
   reactive,
+  ref,
 } from '@vue/composition-api';
 import CusTable from '@/components/CusElTable/CusTable.vue';
 import { ListParam } from './data';
@@ -87,10 +88,10 @@ export default defineComponent({
       alert(22);
     };
     provide('deleteRow', deleteRow);
-    const column: CusTableColumn[] = [
+    const column = ref<CusTableColumn[]>([
       { label: 'Hello', prop: 'hello', comp: helloCell },
       { label: 'World', prop: 'world', minWidth: '180' },
-    ];
+    ]);
     const data = [
       { hello: 'hi', world: 'wd' },
       { hello: 'hello', world: 'world' },
