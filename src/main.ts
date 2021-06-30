@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import 'core-js/es/weak-map';
-import VueCompositionApi from '@vue/composition-api';
+import VueCompositionAPI from '@vue/composition-api';
 import 'normalize.css';
 import App from './App.vue';
 import router from './router';
@@ -16,7 +16,7 @@ Vue.use(ElementUI);
 
 Vue.config.productionTip = false;
 
-Vue.use(VueCompositionApi);
+Vue.use(VueCompositionAPI);
 
 // 主题换肤
 import { initThemeColor } from '@/utils/themeColorClient';

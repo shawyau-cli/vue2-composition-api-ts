@@ -14,7 +14,7 @@ exports.cdnMap = {
     'https://cdn.jsdelivr.net/npm/vue-router@3.2.0/dist/vue-router.min.js',
     'https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js',
     'https://cdn.jsdelivr.net/npm/@vue/composition-api@1.0.0-rc.12/dist/vue-composition-api.prod.min.js',
-    'https://cdn.jsdelivr.net/npm/vuex-composition-helpers@1.0.23/dist/index.min.js',
+    // 'https://cdn.jsdelivr.net/npm/vuex-composition-helpers@1.0.23/dist/index.min.js',
   ],
 };
 
@@ -24,8 +24,8 @@ exports.externals = {
   vuex: 'Vuex',
   'vue-router': 'VueRouter',
   axios: 'axios',
-  '@vue/composition-api': 'VueCompositionApi',
-  'vuex-composition-helpers': 'VuexCompositionHelpers',
+  '@vue/composition-api': 'VueCompositionAPI',
+  // 'vuex-composition-helpers': 'VuexCompositionHelpers',
 };
 
 //压缩代码配置
