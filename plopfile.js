@@ -25,7 +25,6 @@ module.exports = (plop) => {
     ],
     actions: (data) => {
       const { type } = data;
-      console.log(data);
       const actions = [];
 
       // 各模板相关生产逻辑
