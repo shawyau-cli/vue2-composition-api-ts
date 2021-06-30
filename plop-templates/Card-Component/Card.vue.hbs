@@ -1,0 +1,27 @@
+<template>
+  <el-card class="cus-card {{ dashCase name }}">
+    <template #header>
+      <div class="card-header">
+        <span>{{ title }}</span>
+      </div>
+    </template>
+
+    <div class="card-body"></div>
+  </el-card>
+</template>
+
+<script>
+export default {
+  name: '{{ properCase name }}',
+  props: {
+    formModel: {
+      required: true,
+      type: Object,
+    },
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+.{{ dashCase name }} {}
+</style>

@@ -6,7 +6,8 @@
     "serve": "vue-cli-service serve --mode dev",
     "build": "vue-cli-service build --mode prod",
     "lint": "vue-cli-service lint",
-    "svgo": "svgo -f src/assets/iconsvg --config=src/assets/iconsvg/svgo.yml"
+    "svgo": "svgo -f src/assets/iconsvg --config=src/assets/iconsvg/svgo.yml",
+    "plop": "plop"
   },
   "dependencies": {
     "@vue/composition-api": "^1.0.0-rc.12",
@@ -39,6 +40,7 @@
     "eslint-plugin-vue": "^6.2.2",
     "join-file-content-plugin": "^1.0.3",
     "node-sass": "^4.12.0",
+    "plop": "^2.7.4",
     "prettier": "^2.2.1",
     "sass-loader": "^8.0.2",
     "svg-sprite-loader": "^6.0.8",
