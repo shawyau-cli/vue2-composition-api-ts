@@ -26,6 +26,8 @@ import CusTable from '@/components/CusElTable/CusTable.vue';
 import { ListParam } from './data';
 import { usePages } from '@/composables/usePages';
 import { CusTableColumn } from '@/components/CusElTable/data';
+import { useEditProvide } from './composables/useEditContext';
+import EditButton from './components/EditButton';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const mockList = async (data: ListParam): Promise<any> => {
@@ -33,12 +35,14 @@ const mockList = async (data: ListParam): Promise<any> => {
     console.log(data);
     setTimeout(() => {
       let ary = [{ hello: 'hi', world: 'wd' }];
-      const adds: { hello: string; world: string }[] = Array(
-        data.pageSize * data.currPage + 5,
-      ).fill({
-        hello: 'hello1',
-        world: 'world',
-      });
+      const adds: { hello: string; world: string; id: string }[] = [];
+      for (let index = 0; index < 60; index++) {
+        adds.push({
+          id: Math.random().toString(),
+          hello: 'hello' + index,
+          world: 'world' + index,
+        });
+      }
       ary = ary.concat(adds);
       resolve({
         code: 10,
@@ -75,6 +79,8 @@ export default defineComponent({
     CusTable,
   },
   setup() {
+    useEditProvide();
+
     const serchForm = reactive<ListParam>({
       name: '',
       age: 0,
@@ -91,10 +97,11 @@ export default defineComponent({
     const column = ref<CusTableColumn[]>([
       { label: 'Hello', prop: 'hello', comp: helloCell },
       { label: 'World', prop: 'world', minWidth: '180' },
+      { label: '编码', prop: 'id', comp: EditButton },
     ]);
     const data = [
-      { hello: 'hi', world: 'wd' },
-      { hello: 'hello', world: 'world' },
+      { hello: 'hi', world: 'wd', id: '1' },
+      { hello: 'hello', world: 'world', id: '10' },
     ];
     tableData.value = data;
     bindings.total = 14;

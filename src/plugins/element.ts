@@ -2,6 +2,7 @@ import { VueConstructor } from 'vue/types/umd';
 import {
   Button,
   Col,
+  ColorPicker,
   Dropdown,
   DropdownItem,
   DropdownMenu,
@@ -20,6 +21,7 @@ export default {
     Vue.prototype.$message = Message;
     Vue.use(Button);
     Vue.use(Col);
+    Vue.use(ColorPicker);
     Vue.use(Row);
     Vue.use(Dropdown);
     Vue.use(DropdownItem);
